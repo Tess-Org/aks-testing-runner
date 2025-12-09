@@ -17,7 +17,6 @@ on:
 jobs:
   tf-plan:
     name: "Call Plan Dev"
-    if: ${{ github.event_name == 'pull_request' }}
     uses: clouddrove-sandbox/aks-cicd-aaplication/.github/workflows/terraform-deploy-dev.yaml@master
     with:
       working_directory: noe/dev/
