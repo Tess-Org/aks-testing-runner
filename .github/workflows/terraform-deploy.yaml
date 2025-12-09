@@ -17,7 +17,7 @@ on:
 jobs:
   tf-plan:
     name: "Call Plan Dev"
-    uses: clouddrove-sandbox/aks-cicd-aaplication/.github/workflows/terraform-deploy-dev.yaml@master
+    uses: clouddrove-sandbox/aks-cicd-aaplication/.github/workflows/template-tf-plan.yaml@master
     with:
       working_directory: noe/dev/
       terraform_version: "1.9.2"
