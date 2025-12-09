@@ -19,6 +19,7 @@ jobs:
     name: "Call Plan Dev"
     uses: clouddrove-sandbox/aks-cicd-aaplication/.github/workflows/template-tf-plan.yaml@master
     with:
+      runs-on: arc-aks-runners
       working_directory: noe/dev/
       terraform_version: "1.9.2"
       plan_command: terraform plan -out=tfplan
