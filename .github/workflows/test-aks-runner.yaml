@@ -1,0 +1,29 @@
+name: Test ARC AKS Runner
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test-runner:
+    runs-on: [ cd arc-aks-runners ]
+
+    steps:
+      - name: Print runner info
+        run: |
+          echo "Hostname: $(hostname)"
+          echo "Runner Architecture: $(uname -a)"
+          echo "Runner Working Directory: $(pwd)"
+
+      - name: Check tools installed in custom image
+        run: |
+          echo "Node version:" && node -v
+          echo "Azure CLI:" && az version
+          echo "Kubectl:" && kubectl version --client
+          echo "Helm:" && helm version
+          echo "Postgres client:" && psql --version
+
+      - name: Show environment variables
+        run: env | sort
+
+      - name: Runner is working!
+        run: echo "🎉 ARC AKS Runner is working correctly!"
