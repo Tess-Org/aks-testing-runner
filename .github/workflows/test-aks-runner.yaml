@@ -5,7 +5,7 @@ on:
 
 jobs:
   test-runner:
-    runs-on: [ cd arc-aks-runners ]
+    runs-on: [ arc-aks-runners ]
 
     steps:
       - name: Print runner info
